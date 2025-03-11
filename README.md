@@ -25,6 +25,7 @@ The ArXiv MCP Server provides a bridge between AI assistants and arXiv's researc
 - 📋 **Paper Listing**: View all downloaded papers
 - 🗃️ **Local Storage**: Papers are saved locally for faster access
 - 📝 **Prompts**: A Set of Research Prompts
+- 📚 **Citation Management**: Generate properly formatted citations in various academic styles
 
 ## 🚀 Quick Start
 
@@ -99,7 +100,7 @@ For Development:
 
 ## 💡 Available Tools
 
-The server provides four main tools:
+The server provides five main tools:
 
 ### 1. Paper Search
 Search for papers with optional filters:
@@ -135,6 +136,16 @@ Access the content of a downloaded paper:
 ```python
 result = await call_tool("read_paper", {
     "paper_id": "2401.12345"
+})
+```
+
+### 5. Format Citation
+Generate a properly formatted citation for a paper:
+
+```python
+result = await call_tool("format_citation", {
+    "paper_id": "2401.12345",
+    "format": "apa"  # Options: apa, mla, chicago, harvard, ieee, bibtex
 })
 ```
 
